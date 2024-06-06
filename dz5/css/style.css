@@ -1,0 +1,139 @@
+.login-register{
+    width: 157px;
+    height: 16px; 
+    top: 52px; 
+    position: absolute; 
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Cera Pro',  sans-serif;
+    letter-spacing: 1px;
+}
+.login-text, .login-register{
+    font-weight: 500; 
+    font-size: 20px; 
+}
+a {
+    text-decoration: none;
+    color: #727272;
+    font-weight: bold;
+}
+.login-text{
+    color: #727272;
+}
+
+.register-text{
+    color: #46A358; 
+}
+.vertical-line{
+    width: 5px;
+    vertical-align: top;
+    color: #3D3D3D; 
+    font-weight: 250; 
+}
+
+ .p1{
+    width: 300px;
+    height: 16px;
+    top: 108px;
+    font-weight: 400;
+    font-size: 13px; 
+    font-family: 'Cera Pro',  sans-serif; 
+    color: #3D3D3D; 
+    position: absolute; 
+    left: 50%;
+    transform: translateX(-50%);
+ }
+.registration-form{
+    width: 300px;
+    height: 40px;
+    position: absolute; 
+    top: 138px; 
+    left: 50%;
+    transform: translate(-50%);
+}
+#usernameField, #emailField, #passwordField, #confirmPasswordField{
+    width: 300px;
+    height: 40px;
+    margin-bottom: 16px; 
+    padding-left: 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    font-family: 'Cera Pro',  sans-serif; 
+    color: #A5A5A5; 
+    border-radius: 5px;
+    border: 1px solid  #A5A5A5; 
+}
+#confirmPasswordField{
+    margin-bottom: 41px; 
+}
+input[type="submit"]{
+    width: 310px;
+    height: 45px;
+    font-family: 'Cera Pro',  sans-serif; 
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #46A358;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid  #A5A5A5; 
+}
+.or-register-with{
+   width: 300px;
+   height: 16px;
+   position: relative; 
+   left: 50%;
+   transform: translateX(-50%);
+   text-align: center;
+   white-space: nowrap;
+   margin-top: 36px;
+   font-family: 'Cera Pro',  sans-serif; 
+   font-weight: 400;
+   font-size: 13px;
+   color: #3D3D3D;
+   line-height: 16px;
+}
+.or-register-with::before,
+.or-register-with::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    background-color: #EAEAEA;
+    top: 50%; 
+    transform: translateY(-50%);
+}
+
+.or-register-with::before {
+    width: 97px;
+    left: 0; 
+}
+
+.or-register-with::after {
+    width: 95px;
+    right: 0; 
+}
+.google-link, .facebook-link{
+    display: inline-block; 
+    text-decoration: none;
+    position: relative; 
+    top: 27px; 
+    width: 310px;
+    height: 40px;
+    background-color: rgb(255, 255, 255); 
+    font-weight: 500;
+    font-family: 'Cera Pro', sans-serif; 
+    font-size: 13px; 
+    text-align: center;
+    border: 1px solid #A5A5A5; 
+    margin-bottom: 15px;
+    border-radius: 5px;
+    line-height: 40px;  
+}
+.img-google, .img-facebook{
+    width: 20;
+    height: 20px; 
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
