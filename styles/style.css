@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Cera Pro';
+    src: url('/fonts/CeraPro-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+header{
+position: relative;
+ display: flex;
+ justify-content: center;
+ margin-top: 171px;
+}
+header ul{
+    display: flex;
+}
+header nav {
+    margin-bottom: 31px;
+}
+header li{
+    list-style: none;
+    position: relative;
+}
+header, .container{
+    width: 83.333%;
+    margin-right: 105px;
+    margin-left: 105px;
+}
+
+header nav a {
+    text-decoration: none;
+    font-family: "Cera Pro";
+    font-weight: 400;
+    margin-right: 37px;
+    color: 
+    #3D3D3D;
+    font-size: 0.9375em;
+}
+header nav .all-plants{
+    color: #46A358;
+    font-weight: 700;
+    position: relative;
+}
+header nav .short-line {
+    position: absolute;
+    bottom: -5px; 
+    left: 0;
+}
+header nav ul {
+    display: flex;
+    margin-right: 0; /* Добавляем это свойство */
+}
+header ul>li>ul{
+    display: flex;
+    flex-direction: column;
+    background-color: 
+    #f2f5ee;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    position: absolute;
+    visibility: hidden;
+    transition: 0.5s ease-in-out;
+    z-index: 10;
+}
+header ul>li:hover > ul{
+    opacity: 1;
+    visibility: visible;
+}
+header ul>li>ul>li>ul {
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f5ee;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    position: absolute;
+    visibility: hidden;
+    transition: 0.5s ease-in-out;
+    z-index: 10;
+    top: 0;
+    left: 100%; 
+    white-space: nowrap;
+}
+header ul>li>ul>li:hover>ul {
+    opacity: 1;
+    visibility: visible;
+}
+
+.container{
+   display: flex;
+    flex-direction: row;
+    gap: 34px;
+    justify-content: center;
+    position: relative; 
+}
+
+.container img{
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.container .first-pic, .second-pic, .third-pic{
+    background-color: #FBFBFB;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
+    align-items: center;
+}
+
+.third-pic-container{
+    position: relative;
+}
+.image-container .icons {
+    position: absolute;
+    max-width: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 4%;
+}
+.image-container .line{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.second-pic-container{
+    position: relative;
+}
+
+.image-container .frame{
+    position: absolute;
+    max-width: 30%;
+    left: 0;
+    top: 4%;
+}
+.title{
+    margin-top: 12px;
+    margin-bottom: 6px;
+    color:  #3D3D3D;
+    font-family: "Cera Pro";
+}
+.content .price{
+    font-size: 1.125em;
+    color: 
+    #46A358;
+    line-height: 16px;
+    font-weight: 700;
+}
+.price-box{
+    display: flex;
+    gap: 16px;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.content .old-price{
+    color: 
+    #A5A5A5;
+    font-size: 1.125em;
+    text-decoration: line-through;
+    font-family: "Cera Pro";
+}
+p{
+    font-family: "Cera Pro";
+    font-size: 16px;
+    line-height: 16px;
+}
+.arrow{
+    align-items: center;
+}
