@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+
+    <link rel="stylesheet" href="./dist/css/styles.css">
+</head>
+<body>
+
+    <header class="headercontact">
+        <div class="headercontact__logo">
+            <img class="headercontact__logo-icon" src="./app/images/Logo2.png" alt="Logo">
+            <img class="headercontact__logo-slash" src="./app/images/Slash.svg" alt="slash">
+            <span class="headercontact__logo-contactpage">contact</span>
+        </div>
+        
+    <div class="headercontact__burger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+        <div class="headercontact__info">
+            <div class="headercontact__info-contact">
+                <span class="headercontact__info-contact-local" data-lang="uk">УК</span>
+                <span class="headercontact__info-contact-local"data-lang="ru">РУ</span>
+                <span class="headercontact__info-contact-local active" data-lang="en">EN</span>
+                <span class="headercontact__info-contact-dot"></span>
+                <span class="headercontact__info-contact-address">Kyiv, Mechnikova str, 14/1</span>
+                <span class="headercontact__info-contact-dot"></span>
+                <span class="headercontact__info-contact-phone">0800 211 927</span>
+                <span class="headercontact__info-contact-dot"></span>
+                <svg class="headercontact__info-contact-facebook-icon" width="24" height="38" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.486 2 2 6.486 2 12c0 5.09 3.905 9.287 8.9 9.981v-7.061h-2.684V12h2.684v-2.383c0-2.652 1.49-4.083 3.735-4.083 1.09 0 2.248.186 2.248.186v2.486h-1.267c-1.252 0-1.641.774-1.641 1.562V12h2.786l-.445 2.92h-2.341v7.061C20.095 21.287 24 17.09 24 12 24 6.486 19.514 2 12 2z"/>
+                  </svg>    
+                
+            </div>
+            <nav class="headercontact__info-nav">
+                <a class="headercontact__info-nav-link" href="#">about us</a>
+                <a class="headercontact__info-nav-link" href="#">services</a>
+                <a class="headercontact__info-nav-link" href="#">team</a>
+                <a class="headercontact__info-nav-link" href="#">publications</a>
+                <a class="headercontact__info-nav-link active" href="">contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <script>
+        document.querySelectorAll('.headercontact__info-contact-local').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('.headercontact__info-contact-local').forEach(el => {
+                    el.classList.remove('active');
+                });
+                item.classList.add('active');
+            });
+        });
+    </script>
+
+    <main class="mainsection">
+        <div class="mainsection__container">
+            <div class="mainsection__container-contact">
+                <span class="mainsection__container-contact-address">Kyiv,<br> Mechnikova str, 14</span>
+                <span class="mainsection__container-contact-phone">0800 211 927</span>
+                <span class="mainsection__container-contact-email">contact@forstudy.space</span>
+                <div class="mainsection__container-contact-facebook">
+                    <svg class="mainsection__container-contact-facebook-icon" width="38" height="38" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.486 2 2 6.486 2 12c0 5.09 3.905 9.287 8.9 9.981v-7.061h-2.684V12h2.684v-2.383c0-2.652 1.49-4.083 3.735-4.083 1.09 0 2.248.186 2.248.186v2.486h-1.267c-1.252 0-1.641.774-1.641 1.562V12h2.786l-.445 2.92h-2.341v7.061C20.095 21.287 24 17.09 24 12 24 6.486 19.514 2 12 2z"/>
+                      </svg>
+
+                      <span class="mainsection__container-contact-facebook-text">Our page <br>on facebook</span>
+
+                </div>
+            </div>
+
+            <div class="mainsection__container-formwrapper">
+                <div class="mainsection__container-formwrapper-form">
+                    <h2 class="mainsection__container-formwrapper-form-heading">We would like to help you</h2>
+                    <form>
+                        <input type="text" class="mainsection__container-formwrapper-form-input" placeholder="Name" required pattern="[А-ЯA-Z][А-Яа-яA-Za-z ]*">
+                        <textarea id="messageField" class="mainsection__container-formwrapper-form-textarea" placeholder="Message" required></textarea>
+                        <h3 class="mainsection__container-formwrapper-form-subheading">How to answer you?</h3>
+                        <input type="text" class="mainsection__container-formwrapper-form-input" placeholder="Phone number" required pattern="\d+">
+                        <input type="email" class="mainsection__container-formwrapper-form-input" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}">
+                        <button type="submit" class="mainsection__container-formwrapper-form-button" disabled>
+                            <span class="button-text">Send message</span>
+                            <span class="loader" style="display: none;"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const inputs = document.querySelectorAll('.mainsection__container-formwrapper-form-input, .mainsection__container-formwrapper-form-textarea');
+                const button = document.querySelector('.mainsection__container-formwrapper-form-button');
+            
+                function validateForm() {
+                    let isValid = true;
+                    inputs.forEach(input => {
+                        if (!input.checkValidity()) {
+                            isValid = false;
+                        }
+                    });
+                    button.disabled = !isValid;
+                }
+            
+                inputs.forEach(input => {
+                   
+                    input.addEventListener('focus', function () {
+                        this.style.borderColor = '#24A3FF'; 
+                        this.style.color = '#000'; 
+                    });
+            
+                   
+                    input.addEventListener('input', function () {
+                        if (this.checkValidity()) {
+                            this.style.borderColor = '#24A3FF'; 
+                            this.style.color = '#000'; 
+                        } else {
+                            this.style.borderColor = '#FF0000'; 
+                            this.style.color = '#FF0000'; 
+                        }
+                        validateForm(); 
+                    });
+            
+                
+                    input.addEventListener('blur', function () {
+                        if (this.checkValidity()) {
+                            this.style.borderColor = 'transparent'; 
+                            this.style.color = '#000'; 
+                        } else {
+                            this.style.borderColor = '#FF0000'; 
+                            this.style.color = '#FF0000'; 
+                        }
+                        validateForm(); 
+                    });
+                });
+            
+               
+                button.addEventListener('mouseover', function () {
+                    if (!button.disabled) {
+                        this.style.backgroundColor = '#0085FF';
+                    }
+                });
+            
+                button.addEventListener('mouseout', function () {
+                    if (!button.disabled) {
+                        this.style.backgroundColor = ''; 
+                    }
+                });
+            
+           
+                button.addEventListener('click', function (event) {
+                    if (button.disabled) {
+                        event.preventDefault(); 
+                        return;
+                    }
+            
+                    event.preventDefault(); 
+            
+                   
+                    button.classList.add('loading');
+                    button.querySelector('.button-text').style.display = 'none'; 
+                    button.querySelector('.loader').style.display = 'inline-block'; 
+            
+                  
+                    setTimeout(function () {
+                        button.classList.remove('loading');
+                        button.querySelector('.loader').style.display = 'none'; 
+                        button.querySelector('.button-text').style.display = 'inline-block';
+                        button.querySelector('.button-text').textContent = 'Sent'; 
+                    }, 3000);
+                });
+            });
+            </script>
+
+    </main>
+
+    <footer class="footercontact">
+             <div class="footercontact__info">
+            <div class="footercontact__info-general">
+                <div class="footercontact__info-general-location">
+                  <span class="footercontact__info-general-location-address">Kyiv, Mechnikova str, 14/1</span>
+                <span class="footercontact__info-general-location-dot"></span>
+                <span class="footercontact__info-general-location-map">on map</span>   
+                </div>
+                <div class="footercontact__info-general-contact">
+                    <svg class="footercontact__info-general-contact-facebook-icon" width="38" height="38" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.486 2 2 6.486 2 12c0 5.09 3.905 9.287 8.9 9.981v-7.061h-2.684V12h2.684v-2.383c0-2.652 1.49-4.083 3.735-4.083 1.09 0 2.248.186 2.248.186v2.486h-1.267c-1.252 0-1.641.774-1.641 1.562V12h2.786l-.445 2.92h-2.341v7.061C20.095 21.287 24 17.09 24 12 24 6.486 19.514 2 12 2z"/>
+                      </svg>  
+                      <span class="footercontact__info-general-contact-dot"></span>
+                      <span class="footercontact__info-general-contact-phone">0800 211 927</span>
+                    <span class="footercontact__info-general-contact-dot"></span>
+                    <span class="footercontact__info-general-contact-email">contact@forstudy.space</span>
+                </div>
+            </div>
+           <p class="footercontact__info-llc">© 2021 HLEGAL Law company, LLC</p>
+        </div> 
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          
+            function createMenu() {
+                const burger = document.querySelector('.headercontact__burger');
+                const menu = document.createElement('div');
+                const closeBtn = document.createElement('div');
+                const overlay = document.createElement('div');
+        
+                menu.classList.add('navigation-menu');
+                closeBtn.classList.add('close-btn');
+                overlay.classList.add('overlay');
+        
+              
+                document.body.appendChild(overlay);
+                document.body.appendChild(menu);
+                menu.appendChild(closeBtn);
+        
+              
+                const navItems = ['about us', 'services', 'team', 'publications', 'contact'];
+                navItems.forEach(item => {
+                    const navElement = document.createElement('div');
+                    navElement.classList.add('nav-item');
+                    navElement.textContent = item;
+                    if (item === 'contact') {
+                        navElement.classList.add('active');
+                    }
+                    menu.appendChild(navElement);
+                });
+        
+             
+                burger.addEventListener('click', () => {
+                    menu.classList.add('open');
+                    overlay.classList.add('active');
+                });
+        
+              
+                closeBtn.addEventListener('click', () => {
+                    menu.classList.remove('open');
+                    overlay.classList.remove('active');
+                });    
+                
+            }
+        
+           
+            function removeMenu() {
+                const menu = document.querySelector('.navigation-menu');
+                const overlay = document.querySelector('.overlay');
+                if (menu) menu.remove();
+                if (overlay) overlay.remove();
+            }
+        
+         
+            function checkScreenSize() {
+                if (window.innerWidth >= 200 && window.innerWidth <= 600) {
+                    createMenu();
+                } else {
+                    removeMenu();
+                }
+            }
+        
+           
+            checkScreenSize();
+        
+           
+            window.addEventListener('resize', checkScreenSize);
+        });
+        </script>
+    
+</body>
+</html>
